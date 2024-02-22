@@ -17,12 +17,15 @@
 // 1)================================== -->
 
 function countBy(x, n) {
-	let result = [];
-	let times = n;
-	for (let i = x; times > 0; i += x) {
-		times--;
+	let z = [];
+	let index = 1;
+
+	while (z.length < n) {
+		z.push(x * index);
+		index++;
+		console.log("lenght=" + z.length);
 	}
-	return result;
+	return z;
 }
 
 // 3)==================================
