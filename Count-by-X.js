@@ -29,17 +29,61 @@ function countBy(x, n) {
 }
 
 // 3)==================================
-
+function countBy(x, n) {
+	var z = [];
+	for (i = 1; i <= n; i++) {
+		z.push(x * i);
+	}
+	return z;
+}
 // 4)==================================
+const countBy = (x, n) => Array.from({ length: n }, (v, k) => (k + 1) * x);
 
 // 5)==================================
-
+function countBy(x, n) {
+	var z = [];
+	for (var i = 1; i <= n; i++) {
+		z.push(x * i);
+	}
+	return z;
+}
 // 6)==================================
-
+const countBy = (x, n) => [...Array(n)].map((_, idx) => ++idx * x);
 // 7)==================================
-
+function countBy(x, n) {
+	var z = [];
+	for (var i = x; i <= x * n; i += x) {
+		z.push(i);
+	}
+	return z;
+}
 //8)==================================
+const countBy = (x, n) => Array.from({ length: n }, (_, k) => (k + 1) * x);
 
 //9)==================================
-
+function countBy(x, n) {
+	var z = [];
+	while (z.length < n) z.push(x * (z.length + 1));
+	return z;
+}
 //10)==================================
+function countBy(x, n) {
+	return Array.apply(0, Array(n)).map(function (v, i) {
+		return (i + 1) * x;
+	});
+}
+
+//11)==================================
+
+function countBy(x, n) {
+	for (var a = [], i = 0; i < n; i++) {
+		a.push(x * (1 + i));
+	}
+
+	return a;
+}
+
+//12)==================================
+function countBy(x, n) {
+	return Array.apply(null, Array(n)).map((_, i) => (i + 1) * x);
+}
