@@ -10,7 +10,14 @@
 
 // 1)================================== -->
 
-function positiveSum(arr) {}
+function positiveSum(arr) {
+	return arr
+		.filter((number) => number > 0)
+		.reduce((total, currenValue) => {
+			return total + currenValue;
+		}, 0);
+}
+
 // 2) ==================================   ---->
 
 // 3)==================================  ---->
