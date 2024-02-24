@@ -12,11 +12,27 @@ function isTriangle(a, b, c) {
 	return a + b > c && a + c > b && b + c > a ? true : false;
 }
 // 1)================================== -->
+function isTriangle(a, b, c) {
+	if (a > 0 && b > 0 && c > 0) {
+		if (a < b + c && b < a + c && c < a + b) {
+			return true;
+		} else {
+			return false;
+		}
+	} else {
+		return false;
+	}
+}
 
 // 2) ==================================   ---->
-
+function isTriangle(a, b, c) {
+	var sides = [a, b, c].sort();
+	return sides[0] + sides[1] > sides[2];
+}
 // 3)==================================  ---->
-
+function isTriangle(a, b, c) {
+	return b + c > a && a + b > c && a + c > b;
+}
 // 4)==================================  ---->
 
 // 5)==================================  ---->
