@@ -1,16 +1,17 @@
-///7.Ones-and-Zeros.js
-// // 🎹Given an array of ones and zeroes, convert the equivalent binary value to an integer.
-
-// Eg: [0, 0, 0, 1] is treated as 0001 which is the binary representation of 1.
-
+//String repeat
+// // 🎹
+// Write a function that accepts an integer n and a string s as parameters, and returns a string of s repeated exactly n times.
 // ⚽ Solution
-
-const binaryArrayToNumber = (arr) => {};
-// your code
 
 // 1)================================== -->
 
-const binaryArrayToNumber1 = (arr) => parseInt(arr.join(""), 2);
+function repeatStr(n, s) {
+	let repeat = "";
+	for (let i = 1; i <= n; i++) {
+		repeat += s;
+	}
+	return repeat;
+}
 
 // 2) ==================================   ---->
 
