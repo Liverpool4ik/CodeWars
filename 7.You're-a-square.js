@@ -18,17 +18,38 @@ let isSquare = function (n) {
 };
 
 // 1)================================== -->
-
+function isSquare(n) {
+	return Math.sqrt(n) % 1 === 0;
+}
 // 2) ==================================   ---->
+const isSquare = (n) => Math.sqrt(n) % 1 === 0;
 
 // 3)==================================  ---->
-
+var isSquare = function (n) {
+	if (Math.sqrt(n) % 1 == 0) return true;
+	else return false;
+};
 // 4)==================================  ---->
+var isSquare = function (n) {
+	for (var x = 0; x <= n; x++) {
+		if (n === 0) {
+			return true;
+		} else if (n / x === x) {
+			return true;
+		}
+	}
 
+	return false;
+};
 // 5)==================================  ---->
-
+var isSquare = function (n) {
+	return Math.sqrt(n) % 1 === 0 ? true : false;
+};
 // 6)==================================  ---->
-
+var isSquare = function (n) {
+	n = Math.sqrt(n);
+	return ~~n === n;
+};
 // 7)==================================  ---->
 
 //8)==================================  ---->
