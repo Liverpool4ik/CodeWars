@@ -9,17 +9,31 @@ function boolToWord(bool) {
 	return "No";
 }
 // 1)================================== -->
-
-// function .... {
-
-// }
+function boolToWord(bool) {
+	if (bool) {
+		return "Yes";
+	} else {
+		return "No";
+	}
+}
 
 // 2) ==================================   ---->
+let boolToWord = (bool) => (bool ? "Yes" : "No");
 
 // 3)==================================  ---->
+function boolToWord(bool) {
+	if (bool === true) {
+		return "Yes";
+	} else {
+		return "No";
+	}
+}
 
+boolToWord(false);
 // 4)==================================  ---->
-
+function boolToWord(bool) {
+	return bool === true ? "Yes" : "No";
+}
 // 5)==================================  ---->
 
 // 6)==================================  ---->
