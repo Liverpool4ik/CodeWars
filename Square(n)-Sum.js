@@ -16,15 +16,32 @@ for (let i = 0; i < arrLength; i++) {
 }
 return summ;
 // 2) ==================================   ---->
-
+function squareSum(numbers) {
+	return numbers.reduce((sum, num) => sum + num * num, 0);
+}
 // 3)==================================  ---->
-
+function squareSum(numbers) {
+	var sum = 0;
+	numbers.forEach(function (n) {
+		sum += n * n;
+	});
+	return sum;
+}
 // 4)==================================  ---->
-
+function squareSum(numbers) {
+	var result = 0;
+	for (var i = 0; i < numbers.length; i++) {
+		result += numbers[i] * numbers[i];
+	}
+	return result;
+}
 // 5)==================================  ---->
+const squareSum = (numbers) => numbers.reduce((a, b) => a + b ** 2, 0);
 
 // 6)==================================  ---->
-
+function squareSum(numbers) {
+	return numbers.map((n) => n ** 2).reduce((a, b) => a + b, 0);
+}
 // 7)==================================  ---->
 
 //8)==================================  ---->
