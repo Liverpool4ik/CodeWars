@@ -18,17 +18,11 @@
 
 // ⚽ Solution
 function bouncingBall(h, bounce, window) {
-	if (h > 0 && bounce > 0 && 1 && window < h) {
-		let count = 1;
-		while ((h *= bounce) > window) {
-			count += 2;
-		}
-		return count;
-	} else {
-		return -1;
-	}
+	var rebounds = -1;
+	if (bounce > 0 && bounce < 1)
+		while (h > window) (rebounds += 2), (h *= bounce);
+	return rebounds;
 }
-
 // 1)================================== -->
 
 // function .... {
