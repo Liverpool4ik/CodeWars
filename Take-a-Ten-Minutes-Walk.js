@@ -31,16 +31,79 @@ function isValidWalk(walk) {
 
 // 1)================================== -->
 
-function isValidWalk(walk) {}
+function isValidWalk(walk) {
+	function count(val) {
+		return walk.filter(function (a) {
+			return a == val;
+		}).length;
+	}
+	return (
+		walk.length == 10 && count("n") == count("s") && count("w") == count("e")
+	);
+}
 
 // 2) ==================================   ---->
+function isValidWalk(walk) {
+	const north = walk.filter((item) => {
+		return item === "n";
+	}).length;
+	const south = walk.filter((item) => {
+		return item === "s";
+	}).length;
+	const east = walk.filter((item) => {
+		return item === "e";
+	}).length;
+	const west = walk.filter((item) => {
+		return item === "w";
+	}).length;
 
+	return walk.length === 10 && north === south && east === west;
+}
 // 3)==================================  ---->
-
+function isValidWalk(walk) {
+	var res = { n: 0, w: 0, s: 0, e: 0 };
+	walk.forEach((c) => res[c]++);
+	return walk.length === 10 && res.n == res.s && res.e == res.w;
+}
 // 4)==================================  ---->
+function count(dir, walk) {
+	return walk.filter(function (d) {
+		return d == dir;
+	}).length;
+}
 
+function isValidWalk(walk) {
+	return (
+		walk.length === 10 &&
+		count("n", walk) == count("s", walk) &&
+		count("e", walk) == count("w", walk)
+	);
+}
 // 5)==================================  ---->
+function isValidWalk(walk) {
+	if (walk.length === 10) {
+		var ns = 0;
+		var we = 0;
 
+		walk.forEach(function (v, i, a) {
+			if (v === "n") {
+				ns += 1;
+			}
+			if (v === "s") {
+				ns -= 1;
+			}
+			if (v === "w") {
+				we += 1;
+			}
+			if (v === "e") {
+				we -= 1;
+			}
+		});
+
+		if (ns === 0 && we === 0) return true;
+		else return false;
+	} else return false;
+}
 // 6)==================================  ---->
 
 // 7)==================================  ---->
