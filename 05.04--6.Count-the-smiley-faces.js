@@ -37,25 +37,62 @@ function countSmileys(arr) {
 }
 
 // 1)================================== -->
-
-// function .... {
-
-// }
-
+function countSmileys(arr) {
+	return arr.filter((x) => /^[:;][-~]?[)D]$/.test(x)).length;
+}
 // 2) ==================================   ---->
+function countSmileys(arr) {
+	var smileys = [
+		":)",
+		";)",
+		":-)",
+		";-)",
+		";~)",
+		":~)",
+		":D",
+		";D",
+		":-D",
+		":~D",
+		";-D",
+		";~D",
+	];
+	var count = 0;
 
+	for (var i = 0; i < arr.length; i++) {
+		for (var j = 0; j < smileys.length; j++) {
+			if (arr[i] === smileys[j]) {
+				count++;
+			}
+		}
+	}
+	return count;
+}
 // 3)==================================  ---->
+const countSmileys = (ss) =>
+	ss.reduce((a, s) => a + /^[:;][-~]?[D)]$/.test(s), 0);
 
 // 4)==================================  ---->
+const SMILING = /[:;]{1}[-~]?[)D]{1}/;
 
+const countSmileys = (faces) =>
+	faces.filter((face) => SMILING.test(face)).length;
 // 5)==================================  ---->
-
+const smileyRegEx = new RegExp(/[:;][-~]?[)D]/);
+const isSmiley = (s) => smileyRegEx.test(s);
+const countSmileys = (a) => a.filter(isSmiley).length;
 // 6)==================================  ---->
-
+countSmileys = (arr) => arr.filter((v) => /(:|;)(-|~)?(\)|D)/.test(v)).length;
 // 7)==================================  ---->
+const faces = new Set();
+for (let eyes of [":", ";"])
+	for (let nose of ["-", "~", ""])
+		for (let mouth of [")", "D"]) faces.add(eyes + nose + mouth);
 
+countSmileys = (arr) => arr.filter((x) => faces.has(x)).length;
 //8)==================================  ---->
-
+countSmileys = (arr) => arr.filter((e) => /[:;][-~]?[)D]/.test(e)).length;
 //9)==================================  ---->
-
+function countSmileys(arr) {
+	return arr.reduce((n, s) => (/^[:;][-~]?[)D]$/.test(s) ? n + 1 : n), 0);
+}
 //10)==================================  ---->
